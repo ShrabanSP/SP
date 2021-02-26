@@ -1,0 +1,125 @@
+.h_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.big-shape {
+  width: 40vw;
+  height: 40vw;
+  max-width: 400px;
+  max-height: 400px;
+  position: fixed;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 0;
+}
+.small-shape {
+  width: 10vw;
+  height: 10vw;
+  max-width: 100px;
+  max-height: 100px;
+  position: absolute;
+  margin: auto;
+  left: 46%;
+  top: 15%;
+}
+.heart {
+  width: 50%;
+  height: 50%;
+  background: #fa0511;
+  transform: rotate(45deg);
+  box-shadow: 1px 1px 30px 2px;
+}
+.heart::before {
+  position: fixed;
+  background: inherit;
+  border: inherit;
+  width: 50%;
+  height: 100%;
+  content: "";
+  left: -48%;
+  border-radius: 30rem 0 0 30rem;
+}
+.heart::after {
+  position: fixed;
+  background: inherit;
+  border: inherit;
+  width: 100%;
+  height: 50%;
+  content: "";
+  top: -48%;
+  border-radius: 30rem 30rem 0 0;
+}
+.beat {
+  animation: beat 1s infinite ease-out;
+}
+.move {
+  animation: myOrbit 3s linear infinite;
+}
+
+.position-left {
+  left: 10%;
+  top: 60%;
+}
+.position-right {
+  left: 80%;
+  top: 60%;
+}
+.l-45 {
+  transform: rotate(-45deg);
+}
+.r-45 {
+  transform: rotate(45deg);
+  top: 65%;
+}
+.l-45 .heart {
+  animation: beat 2s infinite ease-in;
+}
+.r-45 .heart {
+  animation: beat 2s 1s infinite ease-out;
+}
+.name {
+  position: fixed;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.name h2 {
+  color: #fa0511;
+  font-size: 3rem;
+  font-weight: 30rem;
+  text-shadow: 2px 2px 2px black;
+  text-align: center;
+}
+@keyframes beat {
+  0% {
+  }
+  100% {
+    width: 55%;
+    height: 55%;
+  }
+}
+@keyframes myOrbit {
+  from {
+    transform: rotate(0deg) translateX(5vw) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(5vw) rotate(-360deg);
+  }
+}
+@media screen and (max-width: 535px) and (min-width: 450px) {
+  .name h2 {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .name h2 {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px black;
+  }
+}
