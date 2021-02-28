@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/goodmorning.css" />
     <link rel="stylesheet" href="./css/rose.css" />
     <link rel="stylesheet" href="./css/heart.css" />
+    <link rel="stylesheet" href="./css/doodle.css" />
   </head>
   <body>
     <div id="container">
@@ -75,5 +76,15 @@
         </div>
       </div>
     </div>
+    <css-doodle id="doodle" grid="25">
+      :doodle { @grid: 15 / 100%; } animation-name: bouncing;
+      animation-iteration-count: infinite; animation-duration: 5s;
+      animation-delay: calc(@rand(-5s, -1s, .1)); animation-timing-function:
+      cubic-bezier(.70, .1, 1, 1); background: @pick( magenta, orange, cyan, red
+      ); transform: translate( @rand(-40vw, 40vw), @rand(-40vh, 40vh) ); @size:
+      5vmin; @shape: heart; @place-cell: 50% 50%; @keyframes bouncing { 0% {
+      opacity: 0; } 50% { opacity: 1; } 100% { transform: translate(0, 0); } }
+    </css-doodle>
+    <script src="https://unpkg.com/css-doodle@0.14.2/css-doodle.min.js"></script>
   </body>
 </html>
